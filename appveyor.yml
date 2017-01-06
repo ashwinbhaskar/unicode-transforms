@@ -10,6 +10,7 @@ environment:
     BUILD: "stack"
     RESOLVER: "lts-6"
     GHC_OPTIONS: "-O0 -Werror"
+    LANG: "C.utf-8"
 
     STACK_ROOT: "c:\\sr"
     LOCAL_BIN: "%APPDATA%\\local\\bin"
