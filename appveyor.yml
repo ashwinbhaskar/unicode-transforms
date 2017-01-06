@@ -18,7 +18,7 @@ environment:
     PATH: "%PATH%;%APPDATA%\\local\\bin"
     CABAL_REINIT_CONFIG: "y"
     TEST_INSTALL: "y"
-    PACKAGE_TEST_VER: "62db8f69afcb47428d1fb87ce4005b453f7f179c"
+    PACKAGE_TEST_VER: "1e80f64050c54541de3738de9449d8e0007e0198"
 
 cache:
   - "%STACK_ROOT%" # stack root
