@@ -34,5 +34,6 @@ before_test:
 - curl -sSkL -opackage-test.sh https://raw.githubusercontent.com/harendra-kumar/package-test/%PACKAGE_TEST_VER%/package-test.sh
 
 test_script:
+- chcp 65001
 - stack setup > nul
-- chcp 65001 && stack exec bash package-test.sh
+- stack exec bash package-test.sh
