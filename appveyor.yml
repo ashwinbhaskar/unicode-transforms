@@ -10,8 +10,6 @@ environment:
     BUILD: "stack"
     RESOLVER: "lts-6"
     GHC_OPTIONS: "-O0 -Werror"
-    LANG: "en_US"
-    LC_ALL: "C.UTF-8"
 
     STACK_ROOT: "c:\\sr"
     LOCAL_BIN: "%APPDATA%\\local\\bin"
@@ -31,11 +29,10 @@ cache:
 build: off
 
 before_test:
-- chcp 65001
 - if not exist %LOCAL_BIN% mkdir %LOCAL_BIN%
 - curl -sSkL -ostack.zip https://github.com/commercialhaskell/stack/releases/download/v1.3.0/stack-1.3.0-windows-x86_64.zip && 7z x stack.zip stack.exe && move stack.exe %LOCAL_BIN%
 - curl -sSkL -opackage-test.sh https://raw.githubusercontent.com/harendra-kumar/package-test/%PACKAGE_TEST_VER%/package-test.sh
 
 test_script:
 - stack setup > nul
-- stack exec bash package-test.sh
+- chcp 65001 && stack exec bash package-test.sh
